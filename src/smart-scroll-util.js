@@ -1,7 +1,7 @@
 // 常量定义
 const STATUS_MEMORY = 1,
-      STATUS_VIEW = 2,
-      DATASET_ID = 'exSmartId';
+    STATUS_VIEW = 2,
+    DATASET_ID = 'exSmartId';
 
 let fragment = document.createDocumentFragment(),
     viewPort = '',
@@ -91,6 +91,7 @@ let isVisible = (node, port, cache) => {
     // check visible
     var btm1 = cache.top + cache.height,
         btm2 = port.top + port.height;
+        debugger
     return !(btm1 < port.top || cache.top > btm2);
 };
 
@@ -121,7 +122,7 @@ let moveToPage = (holder, cache) => {
 
 let scrollSmartUtil = {
     toSmart: (element, className) => {
-            viewPort = element,
+        viewPort = element,
             nodeMap = {};
 
         element.addEventListener("scroll", () => {
