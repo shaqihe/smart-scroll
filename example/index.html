@@ -6,32 +6,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style media="screen">
-    *{
-        margin: 0;
-        padding: 0;
-    }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .info {
+            margin-top: 30px;
+            text-align: center;
+            color: #2e2ec1;
+        }
         #test {
             height: 200px;
             width: 500px;
-            margin: 110px auto 0;
+            margin: 50px auto;
             border: 1px solid #999;
             overflow: scroll;
         }
-        li {
+
+        .test_li {
             height: 30px;
             width: 500px;
-            border: 1px red solid;
+            border: 1px #333 solid;
             list-style: none;
         }
+
         p {
             margin: 0;
             padding 0;
             display: inline-block;
             line-height: 30px;
         }
+
+        .info-message {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .link {
+            font-size: 18px;
+            color: #2e2ec1;
+        }
     </style>
 </head>
 <body>
+    <h3 class="info">请打开控制台，审查元素，滚动下面的dom，看ul>li的变化，你会有神奇的发现</h3>
     <ul id="test">
         <li class="test_li">
             <spa>1.</spa><p>我是文本内容</p>
@@ -103,8 +122,16 @@
             <spa>22.</spa><p>我是文本内容</p>
         </li>
     </ul>
+    <div class="info-message">
+        <h4>解决滚动元素内有大量dom，造成卡顿问题的方案</h4>
+        <ul>
+            <li>滚动加载，出现无限滚动时，可能给dom过多页面卡死</li>
+            <li>滚动加载的组件，dom过多，销毁组件的时候也会出现卡死</li>
+            <li>任何滚动的元素，内部元素过多，都会出现卡顿现象</li>
+        </ul>
+        <a href="https://github.com/shaqihe/smart-scroll" class="link">查看代码git地址</a>
+    </div>
 
-    <h3>滚动上面的dom，请打开控制台，查看元素，看ul>li的变化，你会有神奇的发现</h3>
 </body>
     <script type="text/javascript" src="../src/smart-scroll.js"></script>
     <script type="text/javascript">
