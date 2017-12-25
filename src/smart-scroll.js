@@ -32,16 +32,23 @@ var toSmartScroll = (function() {
                     y: 0
                 },
                 isroot, delta, border;
+
             while (!!node && node != to) {
+                let position = node.parentNode.style.position;
+                node.parentNode.style.position = 'absolute';
+
                 isroot = isRoot(node) || node == from;
 
                 delta = isroot ? 0 : node.scrollLeft;
                 border = parseInt(node.style.borderLeftWidth) || 0;
                 result.x += node.offsetLeft + border - delta;
+
                 delta = isroot ? 0 : node.scrollTop;
                 border = parseInt(node.style.borderTopWidth) || 0;
                 result.y += node.offsetTop + border - delta;
-                node = node.offsetParent;
+
+                node.parentNode.style.position = position;
+                node = node.parentNode;
             }
             return result;
         },
