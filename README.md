@@ -24,3 +24,4 @@
   [1]: http://g1024.top/vue-smart-scroll/example/index.html
   [2]: http://7xqd2y.com1.z0.glb.clouddn.com/keshi.jpg
   [3]: http://7xqd2y.com1.z0.glb.clouddn.com/gundong.gif
+
