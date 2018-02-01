@@ -6,9 +6,13 @@ var toSmartScroll = (function() {
     const STATUS_MEMORY = 1, //不在可视区，在内存中
         STATUS_VIEW = 2, // 在可视区
         DATASET_ID = 'exSmartId';
+
     /**
+     *  ----都懂得，通过闭包的形式，创建几个变量: 这几个变量想常住内存，有尼玛不想污染全局变量
      *
      *  创建一个文档碎片，缓存dom
+     *  创建viewPort，缓存当前滚动节点
+     *  创建一个nodeMap，缓存子节点信息
      */
     let fragment = document.createDocumentFragment(),
         viewPort = '',
@@ -182,6 +186,8 @@ var toSmartScroll = (function() {
       * @param   className 是否只操作此节点下的某些元素，可以不传，默认操作element 下所有的childNodes
       * @returns {void}
       */
+
+
     return (element, className) => {
         viewPort = element,
             nodeMap = {};
